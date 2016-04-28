@@ -44,21 +44,18 @@ public class Main {
         
         List<CalculationResult> data = new ArrayList<>();
         FinalController controller = new FinalController();
-        String answer = "<p>Workshop 7 </p>";
-        answer += "<br/>";
+        String answer = "<br/>";
         int i = 1;
         for(String fileName : FILE_NAMES) {
             data = controller.loadClassInfo(fileName);
             Iterator it = data.iterator();
-            answer += "Test Case # " + i + "<br><br>"; //Title
+            answer += "Test Case # " + i++ + "<br><br>"; //Title
             answer += "<table border='1' cellpadding='2' cellspacing='0'>"
                     + "<tr>"
-                    + "<td>Test</td>"
                     + "<td>Parameter</td>"
                     + "<td>Expected Value</td>"
                     + "<td>Actual Value</td>"
-                    + "</tr>"
-                    + "<tr><td rowspan='11'>Test " + i++ +" </td></tr>";
+                    + "</tr>";
             while(it.hasNext()){
                 CalculationResult calculationResult = (CalculationResult) it.next();
                 answer += "<tr><td>rxy</td><td>" +calculationResult.getExpR() + " </td><td>" + calculationResult.getCorrelationR() + "</td></tr>"

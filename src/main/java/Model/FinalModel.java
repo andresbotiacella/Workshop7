@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  *
  * @author 
  */
-public class LoadData {
+public class FinalModel {
     
     /**
      *Load data from .txt file into a List of ClassInfo objects
@@ -53,16 +53,16 @@ public class LoadData {
                     result.setExpUPI(Double.parseDouble(stringsInLine[7]));
                     result.setExpLPI(Double.parseDouble(stringsInLine[8]));
                     result.setXk(Double.parseDouble(stringsInLine[9]));
-                    ruta = System.getProperty("user.dir") + "/"+LoadData.getValueFileForResult(fileName);
-                    result.setValues(LoadData.values(ruta));
+                    ruta = System.getProperty("user.dir") + "/"+FinalModel.getValueFileForResult(fileName);
+                    result.setValues(FinalModel.values(ruta));
                     dataList.add(result);
                        
                 }
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(LoadData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FinalModel.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(LoadData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FinalModel.class.getName()).log(Level.SEVERE, null, ex);
         }
         return dataList;
     }
@@ -85,9 +85,9 @@ public class LoadData {
                 }
             }
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(LoadData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FinalModel.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(LoadData.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FinalModel.class.getName()).log(Level.SEVERE, null, ex);
         }
         return valuePairs;   
     }

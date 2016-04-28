@@ -7,7 +7,7 @@ package Controller;
 
 import Model.CalculationResult;
 import Model.IntegralInfo;
-import Model.LoadData;
+import Model.FinalModel;
 //import Model.Representation;
 import Model.Search;
 import java.util.List;
@@ -16,7 +16,7 @@ import java.util.List;
  *
  * @author 
  */
-public class Controller {
+public class FinalController {
     
     /**
      * Load data from file into list
@@ -25,6 +25,6 @@ public class Controller {
      * @return List of values to be integrated
      */
     public List<CalculationResult> loadClassInfo(String fileName) {
-        return LoadData.loadDataFromFile(fileName);
+        return FinalModel.loadDataFromFile(fileName);
     }
 }

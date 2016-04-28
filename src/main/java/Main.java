@@ -1,4 +1,4 @@
-import Controller.Controller;
+import Controller.FinalController;
 import Model.CalculationResult;
 import java.sql.*;
 import java.util.HashMap;
@@ -16,6 +16,7 @@ import static spark.Spark.get;
 import com.heroku.sdk.jdbc.DatabaseUrl;
 import java.util.Iterator;
 import java.util.List;
+import static spark.Spark.get;
 
 /**
  *
@@ -34,7 +35,7 @@ public class Main {
     staticFileLocation("/public");
 
     
-    get("/calculations", (req, res) -> {
+    get("/FinalCalculations", (req, res) -> {
         final String FILE_NAME_1 = "result1.txt";
         final String FILE_NAME_2 = "result2.txt";
         final String FILE_NAME_3 = "result3.txt";
@@ -42,9 +43,8 @@ public class Main {
         final String[] FILE_NAMES = {FILE_NAME_1, FILE_NAME_2, FILE_NAME_3, FILE_NAME_4};
         
         List<CalculationResult> data = new ArrayList<>();
-        Controller controller = new Controller();
-        String answer = "<p>Tarea 7 </p>";
-        answer += "<br/>";
+        FinalController controller = new FinalController();
+        String answer = "<p>Workshop 7 </p>";
         answer += "<br/>";
         int i = 1;
         for(String fileName : FILE_NAMES) {
@@ -74,10 +74,8 @@ public class Main {
             answer += "<br/>";
             answer += "<br/>";
             
-        }
-////        
+        }   
         return "<html><body>" + answer + "</body><html/>";
-        //return controller.showAnswer(data);
     });
     
     
